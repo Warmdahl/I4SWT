@@ -24,6 +24,16 @@ namespace Calculator
             return Math.Pow(a, b);
         }
 
+        public double Divide(double dividend, double divisor)
+        {
+            return dividend / divisor;
+        }
+
+        public double Clear()
+        {
+
+        }
+
         public double Accumulator()
         {
 
