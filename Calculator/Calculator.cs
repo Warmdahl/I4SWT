@@ -26,17 +26,25 @@ namespace Calculator
 
         public double Divide(double dividend, double divisor)
         {
-            return dividend / divisor;
+            if (divisor == 0.0)
+            {
+                Console.WriteLine("You cannot divide by zero, type an actual number");
+                return 0.0;
+            }
+            else
+            {
+                return dividend / divisor;
+            }
         }
 
         public double Clear()
         {
-
+            return 0.0;
         }
 
         public double Accumulator()
         {
-
+            return 0.0;
         }
     }
 }
