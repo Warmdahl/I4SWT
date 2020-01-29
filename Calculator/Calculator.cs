@@ -12,17 +12,17 @@ namespace Calculator
 
         public double Subtract(double a, double b)
         {
-            return a - b;
+            return cur_num = a - b;
         }
 
         public double Multiply(double a, double b)
         {
-            return a * b;
+            return cur_num = a * b;
         }
 
         public double Power(double a, double b)
         {
-            return Math.Pow(a, b);
+            return cur_num = Math.Pow(a, b);
         }
 
         public double Divide(double dividend, double divisor)
@@ -30,11 +30,11 @@ namespace Calculator
             if (divisor == 0.0)
             {
                 Console.WriteLine("You cannot divide by zero, type an actual number");
-                return 0.0;
+                return cur_num = 0.0;
             }
             else
             {
-                return dividend / divisor;
+                return cur_num = dividend / divisor;
             }
         }
 
@@ -45,10 +45,12 @@ namespace Calculator
 
         public double Accumulator(double value)
         {
-            double acu_result = 0.0;
-            get {return acu_result;}
-            
-            private set { acu_result = value; }
+            //double acu_result = cur_num;
+            //get {return cur_num;}
+
+            //private set { cur_num = value; }
+
+            return 0.0;
         }
     }
 }
