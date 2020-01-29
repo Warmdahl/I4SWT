@@ -4,9 +4,10 @@ namespace Calculator
 {
     public class Calculator
     {
+        private double cur_num;
         public double Add(double a, double b)
         {
-            return a + b;
+            return cur_num = a + b;
         }
 
         public double Subtract(double a, double b)
@@ -42,9 +43,12 @@ namespace Calculator
             return 0.0;
         }
 
-        public double Accumulator()
+        public double Accumulator(double value)
         {
-            return 0.0;
+            double acu_result = 0.0;
+            get {return acu_result;}
+            
+            private set { acu_result = value; }
         }
     }
 }
