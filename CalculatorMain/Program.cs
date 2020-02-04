@@ -13,6 +13,7 @@ namespace CalculatorMain
             Calculator.Calculator Calc = new Calculator.Calculator();
 
             Console.WriteLine($"Adding 2 and 5 gives: {Calc.Add(2, 5)}");
+            Console.WriteLine("Why you ignore me!?");
         }
     }
 }
