@@ -43,5 +43,38 @@ namespace Calculator
         }
 
         public double Accumulator { get; private set; }
+
+        public double Add(double a)
+        {
+            return Accumulator += a;
+        }
+
+        public double Subtract(double a)
+        {
+            return Accumulator -= a;
+        }
+
+        public double Multiply(double a)
+        {
+            return Accumulator = Accumulator * a;
+        }
+
+        public double Power(double a)
+        {
+            return Accumulator = Math.Pow(Accumulator, a);
+        }
+
+        public double Divide(double a)
+        {
+            if (a == 0.0)
+            {
+                Console.WriteLine("You cannot divide by zero, type an actual number");
+                return Accumulator = 0.0;
+            }
+            else
+            {
+                return Accumulator = Accumulator / divisor;
+            }
+        }
     }
 }
