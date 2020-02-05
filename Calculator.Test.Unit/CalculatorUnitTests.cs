@@ -74,13 +74,6 @@ namespace Calculator.Test.Unit
         }
 
 
-        [TestCase(10,10)]
-        public void Accumulator_AccumulateNuNumbers_ResultIsCorrect(double set, double get)
-        {
-            _uut.Add(set, 0);
-            Assert.That(_uut.Accumulator,Is.EqualTo(get));
-        }
-
         //Testing the clear function
         [TestCase(10,0.0)]
         public void Clear_ClearNuNumbers_ResultIsCorrect(double accu_value, double result)
@@ -88,5 +81,13 @@ namespace Calculator.Test.Unit
             _uut.Add(accu_value, 0);
             Assert.That(_uut.Clear,Is.EqualTo(result));
         }
+
+        [TestCase(10, 10)]
+        public void Accumulator_AccumulateNuNumbers_ResultIsCorrect(double set, double get)
+        {
+            _uut.Add(set, 0);
+            Assert.That(_uut.Accumulator, Is.EqualTo(get));
+        }
+
     }
 }

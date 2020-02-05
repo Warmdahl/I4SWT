@@ -45,7 +45,7 @@ namespace Calculator
         public double Accumulator { get; private set; }
 
 
-        //Metode overloads
+        //Metode overloads - only receiving one parameter to each method and utilizing accumulator as second parameter.
         public double Add(double a)
         {
             return Accumulator += a;
