@@ -191,6 +191,10 @@ namespace Calculator.Test.Unit
 
         //Testing multiply with single parameter.
         [TestCase(10,2,2,40)]
+        [TestCase(5,5,5,125)]
+        [TestCase(120,2,20,4800)]
+        [TestCase(-7,7,3,-147)]
+        [TestCase(14,6,0,0)]
         public void Multiply_MultiplySingleNunmbers_ResultIsCorrect(double a, double b, double c, double result)
         {
             _uut.Multiply(a, b);
@@ -199,6 +203,10 @@ namespace Calculator.Test.Unit
 
         //Testing accumulator using multiply with single parameter.
         [TestCase(10, 2, 2, 40)]
+        [TestCase(5, 5, 5, 125)]
+        [TestCase(120, 2, 20, 4800)]
+        [TestCase(-7, 7, 3, -147)]
+        [TestCase(14, 6, 0, 0)]
         public void Accumulator_AccumulatorSingleMulit_ResultIsCorrect(double a, double b, double c, double result)
         {
             _uut.Multiply(a, b);
@@ -207,7 +215,10 @@ namespace Calculator.Test.Unit
         }
 
         //Testing power with single parameter.
-
+        [TestCase(2,4,2,256)]
+        [TestCase(-2,2,5,-1024)]
+        [TestCase(2,-4,-2,256)]
+        [TestCase(-2,-2,-2,-16)]
         public void Power_RaiseSingleNumbers_ResultIsCorrect(double a, double b, double c, double result)
         {
             _uut.Power(a, b);
@@ -215,7 +226,10 @@ namespace Calculator.Test.Unit
         }
 
         //Testing accumulator using power with single parameter.
-
+        [TestCase(2, 4, 2, 256)]
+        [TestCase(-2, 2, 5, -1024)]
+        [TestCase(2, -4, -2, 256)]
+        [TestCase(-2, -2, -2, -16)]
         public void Accumulator_AccumulatorSinglePower_ResultIsCorrect(double a, double b, double c, double result)
         {
             _uut.Power(a, b);
