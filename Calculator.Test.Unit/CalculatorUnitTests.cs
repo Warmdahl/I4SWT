@@ -142,5 +142,22 @@ namespace Calculator.Test.Unit
             _uut.Add(accu_value, 0);
             Assert.That(_uut.Clear,Is.EqualTo(result));
         }
+
+        //Testing add with single parameter
+        [TestCase(2,3,2,7)]
+        public void Add_AddsingleNumber_ResultIsCorrect(double a, double b, double c, double result)
+        {
+            _uut.Add(a, b);
+            Assert.That(_uut.Add(c), Is.EqualTo(result));
+        }
+
+        //Testing accumulator using ADD with single parameter.
+        [TestCase(2, 3, 2, 7)]
+        public void Accumulator_AccumulatorSingleADD_ResultIsCorrect(double a, double b, double c, double result)
+        {
+            _uut.Add(a, b);
+            _uut.Add(c);
+            Assert.That(_uut.Accumulator, Is.EqualTo(result));
+        }
     }
 }
