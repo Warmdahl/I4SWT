@@ -145,6 +145,9 @@ namespace Calculator.Test.Unit
 
         //Testing add with single parameter
         [TestCase(2,3,2,7)]
+        [TestCase(10,10,5,25)]
+        [TestCase(13,7,2,22)]
+        [TestCase(2,1,128,131)]
         public void Add_AddSingleNumber_ResultIsCorrect(double a, double b, double c, double result)
         {
             _uut.Add(a, b);
@@ -153,6 +156,9 @@ namespace Calculator.Test.Unit
 
         //Testing accumulator using ADD with single parameter.
         [TestCase(2, 3, 2, 7)]
+        [TestCase(10, 10, 5, 25)]
+        [TestCase(13, 7, 2, 22)]
+        [TestCase(2, 1, 128, 131)]
         public void Accumulator_AccumulatorSingleADD_ResultIsCorrect(double a, double b, double c, double result)
         {
             _uut.Add(a, b);
@@ -162,6 +168,9 @@ namespace Calculator.Test.Unit
 
         //Testing Sub with single parameter
         [TestCase(10, 5, 2, 3)]
+        [TestCase(15,15,5,-5)]
+        [TestCase(20,15,5,0)]
+        [TestCase(17,8,4,5)]
         public void Subtract_SubtractSingleNumbers_ResultIsCorrect(double a, double b, double c, double result)
         {
             _uut.Subtract(a, b);
@@ -170,6 +179,9 @@ namespace Calculator.Test.Unit
 
         //Testing accumulator using Sub with single parameter.
         [TestCase(10, 5, 2, 3)]
+        [TestCase(15, 15, 5, -5)]
+        [TestCase(20, 15, 5, 0)]
+        [TestCase(17, 8, 4, 5)]
         public void Accumulator_AccumulatorSingleSub_ResultIsCorrect(double a, double b, double c, double result)
         {
             _uut.Subtract(a, b);
