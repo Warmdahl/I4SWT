@@ -39,7 +39,7 @@ namespace Calculator
 
         public double Clear()
         {
-            return 0.0;
+            return Accumulator = 0.0;
         }
 
         public double Accumulator { get; private set; }

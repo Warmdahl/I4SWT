@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Dynamic;
 using Calculator;
 using NUnit.Framework;
 
@@ -70,6 +71,14 @@ namespace Calculator.Test.Unit
         public void Divide_DivideNuNumbers_ResultIsCorrect(double a, double b, double result)
         {
             Assert.That(_uut.Divide(a,b),Is.EqualTo(result));
+        }
+
+
+        [TestCase(10,10)]
+        public void Accumulator_AccumulateNuNumbers_ResultIsCorrect(double set, double get)
+        {
+            _uut.Add(set, 0);
+            Assert.That(_uut.Accumulator,Is.EqualTo(get));
         }
     }
 }
