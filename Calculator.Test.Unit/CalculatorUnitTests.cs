@@ -145,7 +145,7 @@ namespace Calculator.Test.Unit
 
         //Testing add with single parameter
         [TestCase(2,3,2,7)]
-        public void Add_AddsingleNumber_ResultIsCorrect(double a, double b, double c, double result)
+        public void Add_AddSingleNumber_ResultIsCorrect(double a, double b, double c, double result)
         {
             _uut.Add(a, b);
             Assert.That(_uut.Add(c), Is.EqualTo(result));
@@ -158,6 +158,38 @@ namespace Calculator.Test.Unit
             _uut.Add(a, b);
             _uut.Add(c);
             Assert.That(_uut.Accumulator, Is.EqualTo(result));
+        }
+
+        //Testing Sub with single parameter
+        [TestCase(10, 5, 2, 3)]
+        public void Subtract_SubtractSingleNumbers_ResultIsCorrect(double a, double b, double c, double result)
+        {
+            _uut.Subtract(a, b);
+            Assert.That(_uut.Subtract(c), Is.EqualTo(result));
+        }
+
+        //Testing accumulator using Sub with single parameter.
+        [TestCase(10, 5, 2, 3)]
+        public void Accumulator_AccumulatorSingleSub_ResultIsCorrect(double a, double b, double c, double result)
+        {
+            _uut.Subtract(a, b);
+            _uut.Subtract(c);
+            Assert.That(_uut.Accumulator, Is.EqualTo(result));
+        }
+
+        //Testing multiply with single parameter.
+        [TestCase(10,2,2,40)]
+        public void Multiply_MultiplySingleNunmbers_ResultIsCorrect(double a, double b, double c, double result)
+        {
+            _uut.Multiply(a, b);
+            Assert.That(_uut.Multiply(c), Is.EqualTo(result));
+        }
+
+        //Testing accumulator using multiply with single parameter.
+
+        public void Accumulator_AccumulatorSingleMulit_ResultIsCorrect(double a, double b, double c, double result)
+        {
+
         }
     }
 }
