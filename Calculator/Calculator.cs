@@ -44,6 +44,8 @@ namespace Calculator
 
         public double Accumulator { get; private set; }
 
+
+        //Metode overloads
         public double Add(double a)
         {
             return Accumulator += a;
@@ -64,9 +66,9 @@ namespace Calculator
             return Accumulator = Math.Pow(Accumulator, a);
         }
 
-        public double Divide(double a)
+        public double Divide(double divisor)
         {
-            if (a == 0.0)
+            if (divisor == 0.0)
             {
                 Console.WriteLine("You cannot divide by zero, type an actual number");
                 return Accumulator = 0.0;

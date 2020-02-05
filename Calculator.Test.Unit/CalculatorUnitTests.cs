@@ -64,7 +64,7 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Power(x, exp), Is.EqualTo(result));
         }
 
-
+        
         [TestCase(10, 2, 5)]
         [TestCase(50, 2, 25)]
         [TestCase(3,0,0.0)]
@@ -79,6 +79,14 @@ namespace Calculator.Test.Unit
         {
             _uut.Add(set, 0);
             Assert.That(_uut.Accumulator,Is.EqualTo(get));
+        }
+
+        //Testing the clear function
+        [TestCase(10,0.0)]
+        public void Clear_ClearNuNumbers_ResultIsCorrect(double accu_value, double result)
+        {
+            _uut.Add(accu_value, 0);
+            Assert.That(_uut.Clear,Is.EqualTo(result));
         }
     }
 }
