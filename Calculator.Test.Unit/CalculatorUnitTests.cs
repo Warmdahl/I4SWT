@@ -18,6 +18,7 @@ namespace Calculator.Test.Unit
             _uut = new Calculator();
         }
 
+        //Testing add with two parametes
         [TestCase(3, 2, 5)]
         [TestCase(-3, -2, -5)]
         [TestCase(-3, 2, -1)]
@@ -27,7 +28,7 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Add(a, b), Is.EqualTo(result));
         }
 
-
+        //Testing subtract with two parametes
         [TestCase(3, 2, 1)]
         [TestCase(-3, -2, -1)]
         [TestCase(-3, 2, -5)]
@@ -37,7 +38,7 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Subtract(a, b), Is.EqualTo(result));
         }
 
-
+        //Testing multiply with two parametes
         [TestCase(3, 2, 6)]
         [TestCase(-3, -2, 6)]
         [TestCase(-3, 2, -6)]
@@ -50,7 +51,7 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Multiply(a, b), Is.EqualTo(result));
         }
 
-
+        //Testing power with two parametes
         [TestCase(2, 3, 8)]
         [TestCase(2, -3, 0.125)]
         [TestCase(-2, -3, -0.125)]
@@ -64,7 +65,7 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Power(x, exp), Is.EqualTo(result));
         }
 
-        
+        //Testing divide with two parametes
         [TestCase(10, 2, 5)]
         [TestCase(50, 2, 25)]
         [TestCase(3,0,0.0)]
@@ -73,6 +74,13 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Divide(a,b),Is.EqualTo(result));
         }
 
+        //Testing accumulator
+        [TestCase(10,10)]
+        public void Accumulator_AccumulateNuNumbers_ResultIsCorrect(double set, double get)
+        {
+            _uut.Add(set, 0);
+            Assert.That(_uut.Accumulator,Is.EqualTo(get));
+        }
 
         //Testing the clear function
         [TestCase(10,0.0)]
