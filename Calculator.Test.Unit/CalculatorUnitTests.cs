@@ -186,10 +186,29 @@ namespace Calculator.Test.Unit
         }
 
         //Testing accumulator using multiply with single parameter.
-
+        [TestCase(10, 2, 2, 40)]
         public void Accumulator_AccumulatorSingleMulit_ResultIsCorrect(double a, double b, double c, double result)
         {
+            _uut.Multiply(a, b);
+            _uut.Multiply(c);
+            Assert.That(_uut.Accumulator, Is.EqualTo(result));
+        }
 
+        //Testing power with single parameter.
+
+        public void Power_RaiseSingleNumbers_ResultIsCorrect(double a, double b, double c, double result)
+        {
+            _uut.Power(a, b);
+            Assert.That(_uut.Power(c), Is.EqualTo(result));
+        }
+
+        //Testing accumulator using power with single parameter.
+
+        public void Accumulator_AccumulatorSinglePower_ResultIsCorrect(double a, double b, double c, double result)
+        {
+            _uut.Power(a, b);
+            _uut.Power(c);
+            Assert.That(_uut.Accumulator, Is.EqualTo(result));
         }
     }
 }
