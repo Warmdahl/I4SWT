@@ -137,6 +137,9 @@ namespace Calculator.Test.Unit
 
         //Testing the clear function
         [TestCase(10,0.0)]
+        [TestCase(3,0.0)]
+        [TestCase(9,0.0)]
+        [TestCase(59,0.0)]
         public void Clear_ClearNuNumbers_ResultIsCorrect(double accu_value, double result)
         {
             _uut.Add(accu_value, 0);
