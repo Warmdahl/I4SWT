@@ -231,8 +231,8 @@ namespace Calculator.Test.Unit
         
         //Testing power with negative non-int and one parameter
         [TestCase(-2.4,2,2,33.178)]
-        
-        public void Power_RaiseSingleNumbers_ResultIsCorrect(double a, double b, double c, double result)
+        [TestCase(2,3.6,1,12.126)]
+        public void Power_RaiseSingleNumbersNonInt_ResultIsCorrect(double a, double b, double c, double result)
         {
             _uut.Power(a, b);
             Assert.That(_uut.Power(c), Is.EqualTo(result).Within(0.005));
