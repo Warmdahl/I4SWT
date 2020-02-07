@@ -247,6 +247,8 @@ namespace Calculator.Test.Unit
         [TestCase(-4, 4, 2, -0.5)]
         [TestCase(-4, -10, 5, 0.08)]
         [TestCase(-2, -5, -2, -0.2)]
+        [TestCase(8,4,0,0.0)]
+        [TestCase(9,0,4,0.0)]
         public void Divide_DivideSingleNumbers_ResultIsCorrect(double a, double b, double c, double result)
         {
             _uut.Divide(a, b);
