@@ -216,9 +216,10 @@ namespace Calculator.Test.Unit
 
         //Testing power with single parameter.??
         [TestCase(2,4,2,256)]
-        [TestCase(-2,2,5,-1024)]
+        [TestCase(-2,2,5,1024)]
         [TestCase(2,-4,-2,256)]
-        [TestCase(-2,-2,-2,-16)]
+        [TestCase(-2,-2,-2,16)]
+        [TestCase(-3,3,3, -19683)]
         public void Power_RaiseSingleNumbers_ResultIsCorrect(double a, double b, double c, double result)
         {
             _uut.Power(a, b);
@@ -227,9 +228,10 @@ namespace Calculator.Test.Unit
 
         //Testing accumulator using power with single parameter.??
         [TestCase(2, 4, 2, 256)]
-        [TestCase(-2, 2, 5, -1024)]
+        [TestCase(-2, 2, 5, 1024)]
         [TestCase(2, -4, -2, 256)]
-        [TestCase(-2, -2, -2, -16)]
+        [TestCase(-2, -2, -2, 16)]
+        [TestCase(-3, 3, 3, -19683)]
         public void Accumulator_AccumulatorSinglePower_ResultIsCorrect(double a, double b, double c, double result)
         {
             _uut.Power(a, b);
@@ -239,6 +241,9 @@ namespace Calculator.Test.Unit
 
         //Testing divide with single parameter.
         [TestCase(50, 2, 25, 1)]
+        [TestCase(-4, 4, 2, -0.5)]
+        [TestCase(-4, -10, 5, 0.08)]
+        [TestCase(-2, -5, -2, -0.2)]
         public void Divide_DivideSingleNumbers_ResultIsCorrect(double a, double b, double c, double result)
         {
             _uut.Divide(a, b);
@@ -247,6 +252,9 @@ namespace Calculator.Test.Unit
 
         //Testing accumulator using divide with single parameter.??
         [TestCase(50, 2, 25, 1)]
+        [TestCase(-4, 4, 2, -0.5)]
+        [TestCase(-4, -10, 5, 0.08)]
+        [TestCase(-2, -5, -2, -0.2)]
         public void Accumulator_AccumulateSingleDIVIDE_ResultIsCorrect(double a, double b, double c, double result)
         {
             _uut.Divide(a, b);
