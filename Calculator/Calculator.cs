@@ -42,7 +42,12 @@ namespace Calculator
             return Accumulator = 0.0;
         }
 
-        public double Accumulator { get; private set; }
+        public double Accumulator
+        {
+            get; 
+            
+            private set;
+        }
 
 
         //Metode overloads - only receiving one parameter to each method and utilizing accumulator as second parameter.

@@ -177,7 +177,7 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Subtract(c), Is.EqualTo(result));
         }
 
-        //Testing accumulator using Sub with single parameter.??
+        //Testing accumulator using Sub with single parameter.
         [TestCase(10, 5, 2, 3)]
         [TestCase(15, 15, 5, -5)]
         [TestCase(20, 15, 5, 0)]
@@ -201,7 +201,7 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Multiply(c), Is.EqualTo(result));
         }
 
-        //Testing accumulator using multiply with single parameter.??
+        //Testing accumulator using multiply with single parameter.
         [TestCase(10, 2, 2, 40)]
         [TestCase(5, 5, 5, 125)]
         [TestCase(120, 2, 20, 4800)]
@@ -214,7 +214,7 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Accumulator, Is.EqualTo(result));
         }
 
-        //Testing power with single parameter.??
+        //Testing power with single parameter.
         [TestCase(2,4,2,256)]
         [TestCase(-2,2,5,1024)]
         [TestCase(2,-4,-2,256)]
@@ -226,7 +226,7 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Power(c), Is.EqualTo(result));
         }
 
-        //Testing accumulator using power with single parameter.??
+        //Testing accumulator using power with single parameter.
         [TestCase(2, 4, 2, 256)]
         [TestCase(-2, 2, 5, 1024)]
         [TestCase(2, -4, -2, 256)]
@@ -250,7 +250,7 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Divide(c), Is.EqualTo(result));
         }
 
-        //Testing accumulator using divide with single parameter.??
+        //Testing accumulator using divide with single parameter.
         [TestCase(50, 2, 25, 1)]
         [TestCase(-4, 4, 2, -0.5)]
         [TestCase(-4, -10, 5, 0.08)]
@@ -259,6 +259,17 @@ namespace Calculator.Test.Unit
         {
             _uut.Divide(a, b);
             _uut.Divide(c);
+            Assert.That(_uut.Accumulator, Is.EqualTo(result));
+        }
+
+        //testing accumulator with it being used without having been set first:
+        [TestCase(2, 2)]
+        [TestCase(10, 10)]
+        [TestCase(13, 13)]
+        [TestCase(-2, -2)]
+        public void Accumulator_AccuWithoutSetSingleADD_ResultIsCorrect(double a, double result)
+        {
+            _uut.Add(a);
             Assert.That(_uut.Accumulator, Is.EqualTo(result));
         }
     }
