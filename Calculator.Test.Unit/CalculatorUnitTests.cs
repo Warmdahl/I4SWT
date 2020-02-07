@@ -87,7 +87,7 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Accumulator, Is.EqualTo(result));
         }
 
-        //Testing power with two parametes
+        //Testing power with two parametes??
         [TestCase(2, 3, 8)]
         [TestCase(2, -3, 0.125)]
         [TestCase(-2, -3, -0.125)]
@@ -116,7 +116,7 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Accumulator, Is.EqualTo(result));
         }
 
-        //Testing divide with two parametes
+        //Testing divide with two parametes??
         [TestCase(10, 2, 5)]
         [TestCase(50, 2, 25)]
         [TestCase(3,0,0.0)]
@@ -125,7 +125,7 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Divide(a,b),Is.EqualTo(result));
         }
 
-        //Testing accumulator using divide with two parameters
+        //Testing accumulator using divide with two parameters??
         [TestCase(10, 2, 5)]
         [TestCase(50, 2, 25)]
         [TestCase(3, 0, 0.0)]
@@ -177,7 +177,7 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Subtract(c), Is.EqualTo(result));
         }
 
-        //Testing accumulator using Sub with single parameter.
+        //Testing accumulator using Sub with single parameter.??
         [TestCase(10, 5, 2, 3)]
         [TestCase(15, 15, 5, -5)]
         [TestCase(20, 15, 5, 0)]
@@ -201,7 +201,7 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Multiply(c), Is.EqualTo(result));
         }
 
-        //Testing accumulator using multiply with single parameter.
+        //Testing accumulator using multiply with single parameter.??
         [TestCase(10, 2, 2, 40)]
         [TestCase(5, 5, 5, 125)]
         [TestCase(120, 2, 20, 4800)]
@@ -214,7 +214,7 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Accumulator, Is.EqualTo(result));
         }
 
-        //Testing power with single parameter.
+        //Testing power with single parameter.??
         [TestCase(2,4,2,256)]
         [TestCase(-2,2,5,-1024)]
         [TestCase(2,-4,-2,256)]
@@ -225,7 +225,7 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Power(c), Is.EqualTo(result));
         }
 
-        //Testing accumulator using power with single parameter.
+        //Testing accumulator using power with single parameter.??
         [TestCase(2, 4, 2, 256)]
         [TestCase(-2, 2, 5, -1024)]
         [TestCase(2, -4, -2, 256)]
@@ -234,6 +234,23 @@ namespace Calculator.Test.Unit
         {
             _uut.Power(a, b);
             _uut.Power(c);
+            Assert.That(_uut.Accumulator, Is.EqualTo(result));
+        }
+
+        //Testing divide with single parameter.
+        [TestCase(50, 2, 25, 1)]
+        public void Divide_DivideSingleNumbers_ResultIsCorrect(double a, double b, double c, double result)
+        {
+            _uut.Divide(a, b);
+            Assert.That(_uut.Divide(c), Is.EqualTo(result));
+        }
+
+        //Testing accumulator using divide with single parameter.??
+        [TestCase(50, 2, 25, 1)]
+        public void Accumulator_AccumulateSingleDIVIDE_ResultIsCorrect(double a, double b, double c, double result)
+        {
+            _uut.Divide(a, b);
+            _uut.Divide(c);
             Assert.That(_uut.Accumulator, Is.EqualTo(result));
         }
     }
