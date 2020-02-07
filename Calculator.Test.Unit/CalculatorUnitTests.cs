@@ -228,6 +228,15 @@ namespace Calculator.Test.Unit
             _uut.Power(a, b);
             Assert.That(_uut.Power(c), Is.EqualTo(result));
         }
+        
+        //Testing power with negative non-int and one parameter
+        [TestCase(-2.4,2,2,33.178)]
+        
+        public void Power_RaiseSingleNumbers_ResultIsCorrect(double a, double b, double c, double result)
+        {
+            _uut.Power(a, b);
+            Assert.That(_uut.Power(c), Is.EqualTo(result).Within(0.005));
+        }
 
         //Testing accumulator using power with single parameter.
         [TestCase(2, 4, 2, 256)]
