@@ -232,7 +232,7 @@ namespace Calculator.Test.Unit
         //Testing power with negative non-int and one parameter
         [TestCase(-2.4,2,2,33.178)]
         [TestCase(2,3.6,1,12.126)]
-        [TestCase(2,2,4.1,5042.768)]
+        [TestCase(2,3,4.1,5042.768)]
         public void Power_RaiseSingleNumbersNonInt_ResultIsCorrect(double a, double b, double c, double result)
         {
             _uut.Power(a, b);
