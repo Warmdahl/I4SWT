@@ -279,8 +279,8 @@ namespace Calculator.Test.Unit
 
         //testing accumulator with it being used without having been set first:
         [TestCase(2, 2)]
-        [TestCase(10, 10)]
-        [TestCase(13, 13)]
+        [TestCase(10.3, 10.3)]
+        [TestCase(-0.2, -0.2)]
         [TestCase(-2, -2)]
         public void Accumulator_AccuWithoutSetSingleADD_ResultIsCorrect(double a, double result)
         {
